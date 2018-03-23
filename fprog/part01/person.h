@@ -3,6 +3,18 @@
 #include <sstream>
 #include <iosfwd>
 
+/*
+    TODO:
+
+    die beiden Dinger definieren:
+
+    Person(Person&&) = default;
+    Person& operator=(Person&&) = default;
+
+    Person als interface basteln mit unterpersonen (freund, kollege etc.)?
+*/
+
+
 class Person
 {
     std::string mFirstName;
@@ -12,7 +24,19 @@ class Person
     friend std::ostream& operator<<(std::ostream& outputStream, const Person& p);
 
 public:
+
+
+    //Rule of Three *
+    Person() = delete;   //*
+    Person(const Person& other) = delete; //*
+    Person& operator = (const Person& ) = delete; //*
+
+
+    Person(Person&&) = default;
+    Person& operator=(Person&&) = default;
     Person(std::string firstName, std::string lastName);
+    ~Person() = default; //*
+
 
     //getter
     std::string getFirstName () const;
@@ -21,7 +45,13 @@ public:
     //setter
     void setFirstName(const std::string& firstName );
     void setLastName (const std::string& lastName  );
+
+    //funktionen
+    void swap(Person& other);
+
 };
 
 //Ausgabe
 std::ostream& operator<<(std::ostream& outputStream, const Person& p);
+//swap
+void swap(Person& a, Person& b);

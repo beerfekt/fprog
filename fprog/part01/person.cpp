@@ -1,5 +1,6 @@
 #include "person.h"
 
+
 //constructor
 Person::Person(std::string firstName, std::string lastName)
     : mFirstName(firstName), mLastName(lastName)
@@ -33,9 +34,39 @@ void Person::setLastName (const std::string& lastName  )
 
 
 
+
+//funktionen
+
+
+void Person::swap(Person& other) {
+    using std::swap;
+    swap(mFirstName, other.mFirstName);
+    swap(mLastName, other.mLastName);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //öffentliche Schnittstelle
 
 std::ostream& operator<<(std::ostream& outputStream, const Person& p){
     outputStream << "Person : " << p.mFirstName << " " << p.mLastName ;
     return outputStream;
 };
+
+
+void swap(Person& a, Person& b) {
+    a.swap(b);
+}
+
+
+
+

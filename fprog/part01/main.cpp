@@ -2,6 +2,15 @@
 #include <person.h>
 
 
+/*
+    Fragen:
+        persistierung  - während laufzeit (Heap array?) ?
+                       - darüber hinnaus (DB?) ?
+
+*/
+
+
+
 using namespace std;
 
 int main()
@@ -48,7 +57,7 @@ int main()
                 cout << "Geben Sie einen Vornamen ein:" << endl;
                 cin >> lastName;
 
-                Person p(firstName,lastName);
+                Person p{firstName,lastName};
                 cout << endl
                      << p << endl
                      << endl

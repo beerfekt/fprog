@@ -28,13 +28,15 @@ public:
 
     //Rule of Three *
     Person() = delete;   //*
-    Person(const Person& other) = delete; //*
-    Person& operator = (const Person& ) = delete; //*
+    Person(const Person& other);
+    Person& operator = (Person&& other); //*
 
-
-    Person(Person&&) = default;
-    Person& operator=(Person&&) = default;
-    Person(std::string firstName, std::string lastName);
+/*
+    //murks?
+    Person(Person&& other) = default ;
+    Person& operator=(Person&& other) = default;
+*/
+    explicit Person(std::string firstName, std::string lastName);
     ~Person() = default; //*
 
 

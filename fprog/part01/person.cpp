@@ -1,14 +1,24 @@
 #include "person.h"
 
 
-//constructor
+//constructors
+
 Person::Person(std::string firstName, std::string lastName)
     : mFirstName(firstName), mLastName(lastName)
-{
-}
+{}
 
 
-//getter
+Person::Person(const Person& other)
+    :mFirstName(other.mFirstName), mLastName(other.mLastName)
+{}
+
+
+
+
+
+
+//getters
+
 std::string Person::getFirstName () const
 {
     return mFirstName;
@@ -20,7 +30,8 @@ std::string Person::getLastName  () const
 }
 
 
-//setter
+//setters
+
 void Person::setFirstName(const std::string& firstName )
 {
     mFirstName = firstName;
@@ -35,7 +46,12 @@ void Person::setLastName (const std::string& lastName  )
 
 
 
-//funktionen
+//functions
+
+Person& Person::operator=(Person&& other){
+    swap(other);
+    return *this;
+}
 
 
 void Person::swap(Person& other) {

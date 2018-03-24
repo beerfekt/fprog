@@ -19,7 +19,12 @@ int main()
          << endl
          << endl;
 
+    Person p1("hans", "wurst");
+    Person p2 (p1);
+    Person p3 = p2;
+    cout << p3 << endl;
 
+/*
 
     std::string firstName, lastName;
 
@@ -70,7 +75,7 @@ int main()
 
     }//while
 
-
+*/
     return 0;
 
 

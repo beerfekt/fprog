@@ -27,7 +27,8 @@ SOURCES += \
         lib.cpp
 
 HEADERS += \
-        lib.h
+        lib.h \
+    mathe.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

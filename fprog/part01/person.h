@@ -1,7 +1,9 @@
 #pragma once
+#include "eintrag.h"
 #include <string>
 #include <sstream>
 #include <iosfwd>
+#include <vector>
 
 /*
     TODO:
@@ -16,6 +18,7 @@
 
 
 class Person
+        :public Eintrag
 {
     std::string mFirstName;
     std::string mLastName;
@@ -23,19 +26,14 @@ class Person
     //Ausgabe
     friend std::ostream& operator<<(std::ostream& outputStream, const Person& p);
 
-public:
 
+public:
 
     //Rule of Three *
     Person() = delete;   //*
     Person(const Person& other);
     Person& operator = (Person&& other); //*
 
-/*
-    //murks?
-    Person(Person&& other) = default ;
-    Person& operator=(Person&& other) = default;
-*/
     explicit Person(std::string firstName, std::string lastName);
     ~Person() = default; //*
 
@@ -50,10 +48,15 @@ public:
 
     //funktionen
     void swap(Person& other);
-
+    virtual std::vector<std::string> ausgabe() const override;
+    //Evt. string array mit einzeldaten
+    //und das ganze als template siehe unterlagen
 };
+
 
 //Ausgabe
 std::ostream& operator<<(std::ostream& outputStream, const Person& p);
+
+
 //swap
 void swap(Person& a, Person& b);

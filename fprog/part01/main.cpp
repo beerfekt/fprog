@@ -1,8 +1,11 @@
 #include <iostream>
+#include <eintrag.h>
 #include <person.h>
 
 
+
 /*
+temp
     Fragen:
         persistierung  - während laufzeit (Heap array?) ?
                        - darüber hinnaus (DB?) ?
@@ -10,21 +13,49 @@
 */
 
 
-
 using namespace std;
+
+
+
+//Ausgabe versch. Vektoren
+template<typename T>
+std::ostream& operator<<(std::ostream& outputStream, const std::vector<T>& v) {
+    outputStream.put('[');
+    char comma[3] = {'\0', ' ', '\0'};
+    for (const auto& e : v) {
+        outputStream << comma << e;
+        comma[0] = ',';
+    }
+    return outputStream << ']';
+}
+
+/*
+//Ausgabe-Test für Interface
+void print ( const Eintrag& eintrag) {
+//temp
+    //lange Version
+    //std::vector<std::string> result = eintrag.ausgabe();
+    cout << eintrag.ausgabe() << endl;
+}
+*/
+
+
+
 
 int main()
 {
+/*
     cout << "FPROG : " << __cplusplus
          << endl
          << endl;
 
-    Person p1("hans", "wurst");
-    Person p2 (p1);
-    Person p3 = p2;
-    cout << p3 << endl;
+    Person person("hans", "wurst");
 
-/*
+    print(person);
+*/
+
+
+
 
     std::string firstName, lastName;
 
@@ -75,8 +106,10 @@ int main()
 
     }//while
 
-*/
+
     return 0;
 
 
 }//main
+
+

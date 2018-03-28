@@ -2,4 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     part01 \
-    lib
+    lib \
+    templates1 \
+    klassentemplates

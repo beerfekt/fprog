@@ -31,7 +31,9 @@ DISTNAME      = fprog1.0.0
 DISTDIR = /home/beer/workspace/fprog/build-fprog-Desktop_Qt_5_9_1_GCC_64bit-Debug/.tmp/fprog1.0.0
 SUBTARGETS    =  \
 		sub-part01 \
-		sub-lib
+		sub-lib \
+		sub-templates1 \
+		sub-klassentemplates
 
 
 sub-part01-qmake_all:  FORCE
@@ -84,6 +86,56 @@ sub-lib-install_subtargets: FORCE
 sub-lib-uninstall_subtargets: FORCE
 	@test -d lib/ || mkdir -p lib/
 	cd lib/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/lib/lib.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
+sub-templates1-qmake_all:  FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+	cd templates1/ && $(MAKE) -f Makefile qmake_all
+sub-templates1: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile
+sub-templates1-make_first: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile 
+sub-templates1-all: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile all
+sub-templates1-clean: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile clean
+sub-templates1-distclean: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile distclean
+sub-templates1-install_subtargets: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile install
+sub-templates1-uninstall_subtargets: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
+sub-klassentemplates-qmake_all:  FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+	cd klassentemplates/ && $(MAKE) -f Makefile qmake_all
+sub-klassentemplates: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile
+sub-klassentemplates-make_first: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile 
+sub-klassentemplates-all: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile all
+sub-klassentemplates-clean: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile clean
+sub-klassentemplates-distclean: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile distclean
+sub-klassentemplates-install_subtargets: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile install
+sub-klassentemplates-uninstall_subtargets: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
 
 Makefile: ../fprog/fprog.pro ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf \
@@ -437,16 +489,16 @@ Makefile: ../fprog/fprog.pro ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.co
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../fprog/fprog.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 
-qmake_all: sub-part01-qmake_all sub-lib-qmake_all FORCE
+qmake_all: sub-part01-qmake_all sub-lib-qmake_all sub-templates1-qmake_all sub-klassentemplates-qmake_all FORCE
 
-make_first: sub-part01-make_first sub-lib-make_first  FORCE
-all: sub-part01-all sub-lib-all  FORCE
-clean: sub-part01-clean sub-lib-clean  FORCE
-distclean: sub-part01-distclean sub-lib-distclean  FORCE
+make_first: sub-part01-make_first sub-lib-make_first sub-templates1-make_first sub-klassentemplates-make_first  FORCE
+all: sub-part01-all sub-lib-all sub-templates1-all sub-klassentemplates-all  FORCE
+clean: sub-part01-clean sub-lib-clean sub-templates1-clean sub-klassentemplates-clean  FORCE
+distclean: sub-part01-distclean sub-lib-distclean sub-templates1-distclean sub-klassentemplates-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
-install_subtargets: sub-part01-install_subtargets sub-lib-install_subtargets FORCE
-uninstall_subtargets: sub-part01-uninstall_subtargets sub-lib-uninstall_subtargets FORCE
+install_subtargets: sub-part01-install_subtargets sub-lib-install_subtargets sub-templates1-install_subtargets sub-klassentemplates-install_subtargets FORCE
+uninstall_subtargets: sub-part01-uninstall_subtargets sub-lib-uninstall_subtargets sub-templates1-uninstall_subtargets sub-klassentemplates-uninstall_subtargets FORCE
 
 sub-part01-check:
 	@test -d part01/ || mkdir -p part01/
@@ -454,7 +506,13 @@ sub-part01-check:
 sub-lib-check:
 	@test -d lib/ || mkdir -p lib/
 	cd lib/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/lib/lib.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
-check: sub-part01-check sub-lib-check
+sub-templates1-check:
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
+sub-klassentemplates-check:
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
+check: sub-part01-check sub-lib-check sub-templates1-check sub-klassentemplates-check
 
 sub-part01-benchmark:
 	@test -d part01/ || mkdir -p part01/
@@ -462,7 +520,13 @@ sub-part01-benchmark:
 sub-lib-benchmark:
 	@test -d lib/ || mkdir -p lib/
 	cd lib/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/lib/lib.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
-benchmark: sub-part01-benchmark sub-lib-benchmark
+sub-templates1-benchmark:
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
+sub-klassentemplates-benchmark:
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
+benchmark: sub-part01-benchmark sub-lib-benchmark sub-templates1-benchmark sub-klassentemplates-benchmark
 install:install_subtargets  FORCE
 
 uninstall: uninstall_subtargets FORCE
@@ -472,7 +536,7 @@ FORCE:
 dist: distdir FORCE
 	(cd `dirname $(DISTDIR)` && $(TAR) $(DISTNAME).tar $(DISTNAME) && $(COMPRESS) $(DISTNAME).tar) && $(MOVE) `dirname $(DISTDIR)`/$(DISTNAME).tar.gz . && $(DEL_FILE) -r $(DISTDIR)
 
-distdir: sub-part01-distdir sub-lib-distdir FORCE
+distdir: sub-part01-distdir sub-lib-distdir sub-templates1-distdir sub-klassentemplates-distdir FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf ../../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/linux.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/sanitize.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/gcc-base.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/gcc-base-unix.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/g++-base.conf ../../../Qt/5.9.1/gcc_64/mkspecs/common/g++-unix.conf ../../../Qt/5.9.1/gcc_64/mkspecs/qconfig.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3danimation.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dcore.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dextras.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dinput.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquick.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3drender.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_accessibility_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_charts.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_charts_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_concurrent.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_core.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_core_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_datavisualization.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_datavisualization_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_dbus.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_designer.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_designer_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_egl_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_gamepad.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_glx_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_gui.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_gui_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_help.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_help_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_input_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_kms_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_location.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_location_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_multimedia.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_network.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_network_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_networkauth.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_nfc.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_opengl.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_positioning.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_printsupport.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_purchasing.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qml.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qml_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qmltest.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quick.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quick_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_remoteobjects.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_remoteobjects_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_repparser.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_repparser_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_script.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_script_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_scripttools.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_scxml.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_sensors.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_serialbus.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_serialport.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_service_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_sql.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_sql_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_svg.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_svg_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_testlib.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_texttospeech.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_theme_support_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_uitools.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webchannel.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webengine.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_websockets.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webview.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_webview_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_widgets.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_x11extras.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_xml.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_xml_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri ../../../Qt/5.9.1/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri ../../../Qt/5.9.1/gcc_64/mkspecs/features/qt_functions.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/qt_config.prf ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_post.prf .qmake.stash ../../../Qt/5.9.1/gcc_64/mkspecs/features/exclusive_builds.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/toolchain.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/default_pre.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/resolve_config.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/default_post.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/qml_debug.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/warn_on.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/qmake_use.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/file_copies.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/testcase_targets.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/exceptions.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/yacc.prf ../../../Qt/5.9.1/gcc_64/mkspecs/features/lex.prf ../fprog/fprog.pro $(DISTDIR)/
 
@@ -483,4 +547,12 @@ sub-part01-distdir: FORCE
 sub-lib-distdir: FORCE
 	@test -d lib/ || mkdir -p lib/
 	cd lib/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/lib/lib.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/lib
+
+sub-templates1-distdir: FORCE
+	@test -d templates1/ || mkdir -p templates1/
+	cd templates1/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/templates1/templates1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/templates1
+
+sub-klassentemplates-distdir: FORCE
+	@test -d klassentemplates/ || mkdir -p klassentemplates/
+	cd klassentemplates/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/beer/workspace/fprog/fprog/klassentemplates/klassentemplates.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/klassentemplates
 

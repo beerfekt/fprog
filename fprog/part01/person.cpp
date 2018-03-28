@@ -1,6 +1,7 @@
 #include "person.h"
 
 
+
 //constructors
 
 Person::Person(std::string firstName, std::string lastName)
@@ -61,8 +62,10 @@ void Person::swap(Person& other) {
 }
 
 
-
-
+//interface-function
+std::vector<std::string> Person::ausgabe() const {
+    return std::vector<std::string>{mFirstName, mLastName};
+}
 
 
 
@@ -76,8 +79,7 @@ void Person::swap(Person& other) {
 std::ostream& operator<<(std::ostream& outputStream, const Person& p){
     outputStream << "Person : " << p.mFirstName << " " << p.mLastName ;
     return outputStream;
-};
-
+}
 
 void swap(Person& a, Person& b) {
     a.swap(b);

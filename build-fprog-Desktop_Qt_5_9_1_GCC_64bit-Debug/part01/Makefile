@@ -51,9 +51,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../fprog/part01/main.cpp \
-		../../fprog/part01/person.cpp 
+		../../fprog/part01/person.cpp \
+		../../fprog/part01/eintrag.cpp 
 OBJECTS       = main.o \
-		person.o
+		person.o \
+		eintrag.o
 DIST          = ../../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf \
 		../../../../Qt/5.9.1/gcc_64/mkspecs/common/linux.conf \
@@ -227,8 +229,10 @@ DIST          = ../../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.9.1/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt/5.9.1/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.9.1/gcc_64/mkspecs/features/lex.prf \
-		../../fprog/part01/part01.pro person.h ../../fprog/part01/main.cpp \
-		../../fprog/part01/person.cpp
+		../../fprog/part01/part01.pro person.h \
+		eintrag.h ../../fprog/part01/main.cpp \
+		../../fprog/part01/person.cpp \
+		../../fprog/part01/eintrag.cpp
 QMAKE_TARGET  = part01
 DESTDIR       = 
 TARGET        = part01
@@ -631,11 +635,14 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../../fprog/part01/main.cpp 
+main.o: ../../fprog/part01/main.cpp ../../fprog/part01/person.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../fprog/part01/main.cpp
 
 person.o: ../../fprog/part01/person.cpp ../../fprog/part01/person.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o person.o ../../fprog/part01/person.cpp
+
+eintrag.o: ../../fprog/part01/eintrag.cpp ../../fprog/part01/eintrag.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eintrag.o ../../fprog/part01/eintrag.cpp
 
 ####### Install
 
